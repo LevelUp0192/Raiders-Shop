@@ -1,0 +1,35 @@
+{
+  "workbench": [
+    {
+      "id": "wb_2",
+      "level": 2,
+      "price": 20,
+      "benefits": {
+        "en": "Unlocks advanced crafting",
+        "es": "Desbloquea crafteo avanzado"
+      }
+    }
+  ],
+  "rooster": [
+    {
+      "id": "rooster_2",
+      "level": 2,
+      "price": 15,
+      "benefits": {
+        "en": "Better raid rewards",
+        "es": "Mejores recompensas"
+      }
+    }
+  ],
+  "caravan": [
+    {
+      "id": "caravan_2",
+      "level": 2,
+      "price": 25,
+      "benefits": {
+        "en": "More storage",
+        "es": "Más almacenamiento"
+      }
+    }
+  ]
+}

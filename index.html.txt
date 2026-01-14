@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARC Raiders Fan Market</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="title"></h1>
+
+  <nav>
+    <button data-category="materials" id="menu-materials"></button>
+    <button data-category="weapons" id="menu-weapons"></button>
+    <button data-category="blueprints" id="menu-blueprints"></button>
+    <button data-category="upgrades" id="menu-upgrades"></button>
+  </nav>
+
+  <div class="lang-switch">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('es')">ES</button>
+  </div>
+</header>
+
+<main id="shop"></main>
+
+<aside id="cart">
+  <h2 id="cart-title"></h2>
+  <ul id="cart-items"></ul>
+  <p id="total"></p>
+</aside>
+
+<section id="contact">
+  <h2 id="contact-title"></h2>
+
+  <div class="contact-item" id="contact-phone">
+    📞 <a id="phone-link"></a>
+  </div>
+
+  <div class="c

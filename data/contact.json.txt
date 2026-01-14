@@ -1,0 +1,9 @@
+{
+  "phone": "+1 555 123 4567",
+  "whatsapp": "15551234567",
+  "telegram": "",
+  "email": "contact@arcfanmarket.com",
+  "instagram": "",
+  "discord": "",
+  "twitter": ""
+}

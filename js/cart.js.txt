@@ -1,0 +1,24 @@
+let cart = [];
+
+function addToCart(id) {
+  const item = items.find(i => i.id === id);
+  if (!item) return;
+  cart.push(item);
+  renderCart();
+}
+
+function renderCart() {
+  const list = document.getElementById("cart-items");
+  list.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(i => {
+    total += i.price;
+    const li = document.createElement("li");
+    li.textContent = `${i.name} - $${i.price}`;
+    list.appendChild(li);
+  });
+
+  document.getElementById("total").textContent =
+    `${translations.total}: $${total}`;
+}

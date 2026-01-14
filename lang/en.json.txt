@@ -1,0 +1,16 @@
+{
+  "title": "ARC Raiders Fan Market",
+  "cart": "Cart",
+  "total": "Total",
+  "addToCart": "Add to cart",
+  "menu": {
+    "materials": "Materials",
+    "weapons": "Weapons",
+    "blueprints": "Blueprints",
+    "upgrades": "Upgrades"
+  },
+  "contact": {
+    "title": "Contact & Social Media"
+  },
+  "footer": "Fan-made project. Not affiliated with ARC Raiders or Embark Studios."
+}

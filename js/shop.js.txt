@@ -1,0 +1,50 @@
+let items = [];
+
+async function loadUpgrades() {
+  const saved = localStorage.getItem("upgradesData");
+  let data;
+
+  if (saved) {
+    data = JSON.parse(saved);
+  } else {
+    const res = await fetch("data/upgrades.json");
+    data = await res.json();
+  }
+
+  items = [];
+
+  Object.keys(data).forEach(type => {
+    data[type].forEach(up => {
+      items.push({
+        id: up.id,
+        name: `${type.toUpperCase()} Lv.${up.level}`,
+        price: up.price,
+        benefits: up.benefits,
+        category: "upgrades"
+      });
+    });
+  });
+
+  renderShop("upgrades");
+}
+
+function renderShop(category) {
+  const shop = document.getElementById("shop");
+  shop.innerHTML = "";
+
+  items.filter(i => i.category === category).forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+      <h3>${item.name}</h3>
+      <p>${item.benefits[currentLang]}</p>
+      <p>$${item.price}</p>
+      <button onclick="addToCart('${item.id}')">
+        ${translations.addToCart}
+      </button>
+    `;
+    shop.appendChild(div);
+  });
+}
+
+loadUpgrades();

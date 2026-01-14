@@ -1,0 +1,14 @@
+function saveContact(){
+  const d={
+    phone:c("c-phone"),
+    whatsapp:c("c-whatsapp"),
+    telegram:c("c-telegram"),
+    email:c("c-email"),
+    instagram:c("c-instagram"),
+    discord:c("c-discord"),
+    twitter:c("c-twitter")
+  };
+  localStorage.setItem("contactData",JSON.stringify(d));
+  alert("Saved");
+}
+function c(id){return document.getElementById(id).value;}

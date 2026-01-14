@@ -1,0 +1,32 @@
+async function loadContact() {
+  const saved = localStorage.getItem("contactData");
+  let data;
+
+  if (saved) {
+    data = JSON.parse(saved);
+  } else {
+    const res = await fetch("data/contact.json");
+    data = await res.json();
+  }
+
+  toggle("contact-phone", data.phone, "phone-link", `tel:${data.phone}`, data.phone);
+  toggle("contact-whatsapp", data.whatsapp, "whatsapp-link", `https://wa.me/${data.whatsapp}`);
+  toggle("contact-telegram", data.telegram, "telegram-link", data.telegram);
+  toggle("contact-email", data.email, "email-link", `mailto:${data.email}`, data.email);
+  toggle("contact-instagram", data.instagram, "instagram-link", data.instagram);
+  toggle("contact-discord", data.discord, "discord-link", data.discord);
+  toggle("contact-twitter", data.twitter, "twitter-link", data.twitter);
+}
+
+function toggle(containerId, value, linkId, href, text = null) {
+  const box = document.getElementById(containerId);
+  if (!value) {
+    box.style.display = "none";
+    return;
+  }
+  const link = document.getElementById(linkId);
+  link.href = href;
+  if (text) link.textContent = text;
+}
+
+loadContact();
